@@ -19,7 +19,7 @@ define(
       function (editor, url) {
         // Get our keywords from the editor element.
         var textarea = editor.getElement();
-        var keywords = DOMUtils.getAttrib(textarea, 'data-keywords');
+        var keywords = JSON.parse(textarea.getAttribute('data-keywords'));
         var values = [];
 
         for (var word in keywords) {
@@ -39,8 +39,8 @@ define(
         editor.addButton(
           'keyword',
           {
-            text: '%_%',
-            icon: 'percent',
+            text: '%_',
+            icon: false,
             onclick: function () {
               // Open window.
               editor.windowManager.open(
@@ -51,7 +51,7 @@ define(
                   body: [
                     {
                       type: 'listbox',
-                      name: 'align',
+                      name: 'keyword',
                       label: '',
                       onselect: function (e) {},
                       'values': values
@@ -59,7 +59,7 @@ define(
                   ],
                   onsubmit: function (e) {
                     // Insert content when the window form is submitted.
-                    editor.insertContent('%' + e.data.value + '%');
+                    editor.insertContent('%' + e.data.keyword + '%');
                   }
                 }
               );
