@@ -17,18 +17,20 @@ define(
     PluginManager.add(
       'keyword',
       function (editor, url) {
+
         // Get our keywords from the editor element.
-        var textarea = editor.getElement();
-        var keywords = JSON.parse(textarea.getAttribute('data-keywords'));
+        var _textarea = editor.getElement();
+        var _keywords = JSON.parse(_textarea.getAttribute('data-keywords'));
+
         var values = [];
 
-        for (var word in keywords) {
-          if (!keywords.hasOwnProperty(word)) {
+        for (var word in _keywords) {
+          if (!_keywords.hasOwnProperty(word)) {
             continue;
           }
 
           var value = {
-            text: keywords[word],
+            text: _keywords[word],
             value: word
           };
 

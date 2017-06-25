@@ -503,6 +503,7 @@ module.exports = function (grunt) {
 
     subgrunt: {
       'core': { path: 'src/core' },
+      'ace-plugin': { path: 'src/plugins/ace' },
       'advlist-plugin': { path: 'src/plugins/advlist' },
       'anchor-plugin': { path: 'src/plugins/anchor' },
       'autolink-plugin': { path: 'src/plugins/autolink' },
@@ -525,6 +526,7 @@ module.exports = function (grunt) {
       'imagetools-plugin': { path: 'src/plugins/imagetools' },
       'importcss-plugin': { path: 'src/plugins/importcss' },
       'insertdatetime-plugin': { path: 'src/plugins/insertdatetime' },
+      'keyword-plugin': { path: 'src/plugins/keyword' },
       'legacyoutput-plugin': { path: 'src/plugins/legacyoutput' },
       'link-plugin': { path: 'src/plugins/link' },
       'lists-plugin': { path: 'src/plugins/lists' },
@@ -549,7 +551,8 @@ module.exports = function (grunt) {
       'wordcount-plugin': { path: 'src/plugins/wordcount' },
       'inlite-theme': { path: 'src/themes/inlite' },
       'modern-theme': { path: 'src/themes/modern' },
-      'lightgray-skin': { path: 'src/skins/lightgray' }
+      'lightgray-skin': { path: 'src/skins/lightgray' },
+      'blueberry-skin': { path: 'src/skins/blueberry' }
     },
 
     copy: {
